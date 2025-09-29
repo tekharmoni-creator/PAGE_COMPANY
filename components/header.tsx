@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import Formulario from "@/components/ui/solicitar_automation"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [open, setOpen] = useState(false);
 
   return (
     <header
@@ -47,6 +49,7 @@ export function Header() {
             <Button
               className="bg-primary text-white shadow-lg hover:bg-blue-700 transition-all duration-200 font-semibold px-6 py-2 rounded-lg focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
               style={{ boxShadow: '0 4px 24px 0 rgba(0, 123, 255, 0.15)' }}
+              onClick={()=>setOpen(true)}
             >
               Solicita tu automatización
             </Button>
@@ -88,6 +91,7 @@ export function Header() {
           </div>
         )}
       </div>
+       <Formulario open={open} onClose={() => setOpen(false)} />
     </header>
   )
 }
