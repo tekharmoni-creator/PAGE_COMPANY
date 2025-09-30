@@ -8,12 +8,13 @@ interface FormularioProps {
 
 export default function Formulario({ open, onClose }: FormularioProps) {
   const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
+    nombre_representante: "",
+    nombre_empresa: "",
     celular: "",
     whatsapp: false,
     descripcion: "",
     correo:"",
+    Nit:"",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -116,18 +117,18 @@ export default function Formulario({ open, onClose }: FormularioProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label
-                htmlFor="nombre"
+                htmlFor="nombre_representante"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                Nombre
+                Nombre de representante  
               </label>
               <input
-                id="nombre"
-                name="nombre"
+                id="nombre_representante"
+                name="nombre_representante"
                 type="text"
                 required
-                placeholder="Ingresa tu nombre"
-                value={formData.nombre}
+                placeholder="Ingresa tu nombre como representante"
+                value={formData.nombre_representante}
                 onChange={handleChange}
                 className="block w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
@@ -135,18 +136,36 @@ export default function Formulario({ open, onClose }: FormularioProps) {
 
             <div>
               <label
-                htmlFor="apellido"
+                htmlFor="nombre_empresa"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                Apellido
+                Nombre de empresa
               </label>
               <input
-                id="apellido"
-                name="apellido"
+                id="nombre_empresa"
+                name="nombre_empresa"
                 type="text"
                 required
-                placeholder="Ingresa tu apellido"
-                value={formData.apellido}
+                placeholder="Ingresa el nombre de la empresa"
+                value={formData.nombre_empresa}
+                onChange={handleChange}
+                className="block w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="Nit"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Nit
+              </label>
+              <input
+                id="Nit"
+                name="Nit"
+                type="text"
+                placeholder="Ingresa el nit de la empresa"
+                value={formData.Nit}
                 onChange={handleChange}
                 className="block w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
               />

@@ -83,6 +83,7 @@ export function Header() {
                 <Button
                   className="w-full bg-primary text-white shadow-lg hover:bg-blue-700 transition-all duration-200 font-semibold px-6 py-2 rounded-lg focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                   style={{ boxShadow: '0 4px 24px 0 rgba(0, 123, 255, 0.15)' }}
+                  onClick={()=>setOpen(true)}
                 >
                   Solicita tu automatización
                 </Button>

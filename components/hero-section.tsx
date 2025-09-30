@@ -1,6 +1,6 @@
 "use client"
-
-
+import Formulario from "@/components/ui/solicitar_automation"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Workflow, Zap, Users } from "lucide-react"
 import { motion } from "framer-motion"
@@ -9,6 +9,8 @@ import { motion } from "framer-motion"
 // No se usa createContext ni features incompatibles con SSR.
 
 export function HeroSection() {
+
+  const [open,setOpen]=useState(false)
   return (
     <section
       className="relative overflow-hidden py-10 sm:py-16 bg-blue-50"
@@ -57,6 +59,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                  onClick={()=>setOpen(true) }
                 >
                   ¡Solicita tu automatizacíon!
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -139,6 +142,7 @@ export function HeroSection() {
           </div>
         </section>
       </div>
+      <Formulario open={open} onClose={() => setOpen(false)} />
     </section>
   )
 }
