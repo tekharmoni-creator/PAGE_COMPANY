@@ -59,8 +59,8 @@ export default function Formulario({ open, onClose }: FormularioProps) {
     const timeout = setTimeout(() => controller.abort(), 10000); // 10s
 
     try {
-      const res = await fetch("https://tekharmoni.app.n8n.cloud/webhook-test/2fceed71-8a09-40d6-bec7-18db0519b242", {
-        method: "POST",
+      const res = await fetch("https://tekharmoni.app.n8n.cloud/webhook/2fceed71-8a09-40d6-bec7-18db0519b242", {
+        method: "POST", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
         signal: controller.signal,
